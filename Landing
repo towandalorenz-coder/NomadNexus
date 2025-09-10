@@ -1,0 +1,437 @@
+index.html
+# README.md
+
+![NomadNexus Logo](./assets/logo.svg)
+
+> **NomadNexus** — Your digital hub for global professionals: perks, relocation tools, and community to make remote living seamless.
+
+---
+
+## Table of Contents
+
+* [About](#about)
+* [Key Features](#key-features)
+* [Live Demo](#live-demo)
+* [Screenshots](#screenshots)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
+* [Project Structure](#project-structure)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Security](#security)
+* [Contact](#contact)
+
+---
+
+## About
+
+NomadNexus centralizes **member perks**, **relocation checklists**, **visa guidance**, and **community networking** for remote workers and expats. Think *perks marketplace + relocation playbook + community directory* in one place.
+
+### Elevator Pitch
+
+* **For:** Remote workers, expats, global professionals
+* **Who need:** Clear steps to relocate + benefits that actually save money
+* **NomadNexus:** A hub that bundles perks, tools, and community support
+* **Unlike:** Generic travel blogs or scattered Telegram groups
+
+---
+
+## Key Features
+
+* **Perks Marketplace:** Curated discounts for housing, coworking, SIM/eSIM, insurance, and more.
+* **Relocation Toolkit:** Country-specific visa guidance, apostille steps, FBI background check flow, and document checklist.
+* **Community Nexus:** Member map and profiles to connect by city, skill, or interest.
+* **Cost-of-Living Snapshots:** City cards with rent ranges, crime/readiness notes, and public transit info.
+* **Partner Onboarding:** Simple intake for chambers, coworking spaces, and service providers.
+* **Privacy-by-Design:** Minimal data collection and clear controls.
+
+> **Planned**: In-app wallet for perk redemptions; verified partner reviews; multi-language support.
+
+---
+
+## Live Demo
+
+This repo includes a production-ready **single-file landing page** (`index.html`). Deploy with one click:
+
+* **Vercel**: drag & drop or `vercel deploy`
+* **Netlify**: drag & drop or `netlify deploy`
+* **GitHub Pages**: enable Pages on `main` and set root to `/`.
+
+---
+
+## Screenshots
+
+Add screenshots or screen recordings into `/assets/screens/` and reference them here once available.
+
+---
+
+## Tech Stack
+
+* **Frontend (landing):** HTML5, Tailwind CSS (CDN), vanilla JS
+* **Analytics (optional):** Plausible/GoatCounter (add your site ID)
+* **Forms (optional):** Formspree or Tally for waitlist capture
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* GitHub account
+* Node.js **optional** (only if you later add a bundler)
+
+### Quick Start
+
+```bash
+# 1) Create repo (if not already)
+# On GitHub: new repo → NomadNexus → add README, .gitignore (Node), choose license
+
+# 2) Clone
+git clone https://github.com/<YOUR-OWNER>/NomadNexus.git
+cd NomadNexus
+
+# 3) Add landing page
+# Copy this repo's index.html into the project root
+
+# 4) Commit & push
+git add .
+git commit -m "feat: add NomadNexus landing page + README"
+git push origin main
+```
+
+### Local Preview
+
+Just open `index.html` in your browser.
+
+---
+
+## Project Structure
+
+```
+NomadNexus/
+├── assets/
+│   ├── logo.svg
+│   └── screens/
+├── index.html
+└── README.md
+```
+
+---
+
+## Roadmap
+
+* [ ] Perks submission portal & partner verification
+* [ ] City data cards w/ live cost-of-living + safety snapshots
+* [ ] Member directory + map (opt-in privacy controls)
+* [ ] Visa/Relocation wizards (Spain, Portugal, Thailand, Costa Rica, Vietnam)
+* [ ] Affiliate tracking for perk redemption
+* [ ] Multilingual UI (EN → ES/PT → TH)
+
+---
+
+## Contributing
+
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feat/amazing`)
+3. Commit changes (`git commit -m 'feat: add amazing feature'`)
+4. Push (`git push origin feat/amazing`)
+5. Open a Pull Request
+
+Please follow Conventional Commits.
+
+---
+
+## License
+
+Choose one license:
+
+* **MIT** (permissive) — recommended for open source
+* **Apache-2.0** (patent grant)
+* **Proprietary** (keep code closed — simply omit a license file)
+
+---
+
+## Security
+
+Found a vulnerability? Please open a **private** security advisory or email the maintainer.
+
+---
+
+## Contact
+
+**NomadNexus**
+Founder: Towanda Lorenz
+Email: [hello@nomadnexus.app](mailto:hello@nomadnexus.app) (placeholder)
+
+---
+
+---
+
+# index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NomadNexus — Perks, Relocation, Community</title>
+  <meta name="description" content="NomadNexus is a digital hub for global professionals, offering perks, relocation tools, and community for seamless remote living." />
+  <meta property="og:title" content="NomadNexus — Perks, Relocation, Community" />
+  <meta property="og:description" content="Perks marketplace, relocation toolkit, and community directory in one hub." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/assets/favicon.svg" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Minimal polish for gradients and blurs */
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,0.06); }
+    .hero-gradient { background: radial-gradient(1200px 600px at 20% 0%, rgba(99,102,241,0.15), transparent),
+                                 radial-gradient(1000px 500px at 80% 10%, rgba(16,185,129,0.12), transparent);
+    }
+  </style>
+</head>
+<body class="antialiased bg-slate-950 text-slate-100">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur border-b border-white/10">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <img src="./assets/logo.svg" alt="NomadNexus" class="h-7 w-7" />
+        <span class="font-semibold tracking-tight">NomadNexus</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300">
+        <a href="#features" class="hover:text-white">Features</a>
+        <a href="#cities" class="hover:text-white">Cities</a>
+        <a href="#partners" class="hover:text-white">Partners</a>
+        <a href="#pricing" class="hover:text-white">Pricing</a>
+      </nav>
+      <a href="#waitlist" class="inline-flex items-center rounded-xl bg-indigo-500 hover:bg-indigo-400 px-4 py-2 text-sm font-semibold">Join Waitlist</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-gradient">
+    <div class="mx-auto max-w-7xl px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+          Relocate smarter. <span class="text-indigo-400">Live globally.</span>
+        </h1>
+        <p class="mt-5 text-lg text-slate-300">Perks marketplace, relocation toolkit, and community directory—
+          everything you need to build a sustainable remote life abroad.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a href="#waitlist" class="px-6 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-400 font-semibold text-center">Join the Waitlist</a>
+          <a href="#features" class="px-6 py-3 rounded-xl border border-white/20 hover:border-white/40 text-center">Explore Features</a>
+        </div>
+        <p class="mt-4 text-xs text-slate-400">No spam. Early members get lifetime perks.</p>
+      </div>
+      <div>
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-3xl blur-2xl bg-indigo-500/20"></div>
+          <div class="relative glass border border-white/10 rounded-3xl p-4">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Nomad city collage" class="rounded-2xl"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS (social proof) -->
+  <section class="py-10 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4">
+      <p class="text-center text-slate-400 text-sm">Perks & partners (examples)</p>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-6 gap-6 opacity-70">
+        <div class="text-center">Cowork+</div>
+        <div class="text-center">NomadInsure</div>
+        <div class="text-center">eSIMGo</div>
+        <div class="text-center">CasaFlex</div>
+        <div class="text-center">MoveEasy</div>
+        <div class="text-center">ChamberNet</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Everything in one hub</h2>
+      <p class="mt-2 text-slate-400">Perks that save money, steps that save time, and a community that opens doors.</p>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-lg">Perks Marketplace</h3>
+          <p class="mt-2 text-slate-300">Curated discounts on housing, coworking, SIM/eSIM, banking, and insurance.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-lg">Relocation Toolkit</h3>
+          <p class="mt-2 text-slate-300">Country-specific visa guidance, apostille/FBI flow, and document checklists.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold text-lg">Community Nexus</h3>
+          <p class="mt-2 text-slate-300">Member map and profiles to connect by city, skill, and interests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITY CARDS -->
+  <section id="cities" class="py-16 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl font-bold">City snapshots</h2>
+      <p class="mt-2 text-slate-400">Fast facts to help you choose your next base.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <!-- Card template repeat -->
+        <article class="glass border border-white/10 rounded-2xl p-5">
+          <h3 class="font-semibold">Valencia, Spain</h3>
+          <ul class="mt-2 text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Rent: €850–€1,200 (1BR)</li>
+            <li>Climate: Mild, sunny</li>
+            <li>Transit: Metro + bike-friendly</li>
+          </ul>
+        </article>
+        <article class="glass border border-white/10 rounded-2xl p-5">
+          <h3 class="font-semibold">Porto, Portugal</h3>
+          <ul class="mt-2 text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Rent: €750–€1,100 (1BR)</li>
+            <li>Climate: Temperate coastal</li>
+            <li>Transit: Metro + walkable</li>
+          </ul>
+        </article>
+        <article class="glass border border-white/10 rounded-2xl p-5">
+          <h3 class="font-semibold">Chiang Mai, Thailand</h3>
+          <ul class="mt-2 text-sm text-slate-300 list-disc list-inside space-y-1">
+            <li>Rent: ฿10k–฿18k (1BR)</li>
+            <li>Climate: Tropical</li>
+            <li>Transit: Songthaews, Grab</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section id="partners" class="py-20">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold">Partner with NomadNexus</h2>
+          <p class="mt-3 text-slate-300">Bring exclusive perks to a growing community of global professionals. Coworking spaces, chambers, housing providers, and relocation services welcome.</p>
+          <ul class="mt-4 text-slate-300 list-disc list-inside">
+            <li>Zero-cost onboarding</li>
+            <li>Revenue share on redemptions</li>
+            <li>Verified reviews & visibility</li>
+          </ul>
+        </div>
+        <form class="glass border border-white/10 rounded-2xl p-6" action="https://formspree.io/f/your-form-id" method="POST">
+          <h3 class="font-semibold text-lg">Partner interest</h3>
+          <label class="block mt-4 text-sm">Your Organization
+            <input class="mt-1 w-full rounded-lg bg-slate-900 border border-white/10 px-3 py-2" name="org" required />
+          </label>
+          <label class="block mt-4 text-sm">Contact Email
+            <input type="email" class="mt-1 w-full rounded-lg bg-slate-900 border border-white/10 px-3 py-2" name="email" required />
+          </label>
+          <label class="block mt-4 text-sm">Notes
+            <textarea class="mt-1 w-full rounded-lg bg-slate-900 border border-white/10 px-3 py-2" name="notes" rows="3"></textarea>
+          </label>
+          <button class="mt-5 w-full rounded-xl bg-emerald-500 hover:bg-emerald-400 py-2 font-semibold">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-3xl md:text-4xl font-bold">Simple, transparent pricing</h2>
+      <p class="mt-2 text-slate-400">Early members lock lifetime perks.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="glass rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold">Starter</h3>
+          <p class="mt-1 text-3xl font-bold">Free</p>
+          <ul class="mt-4 text-sm text-slate-300 space-y-2">
+            <li>Community access</li>
+            <li>Basic city snapshots</li>
+            <li>Newsletter</li>
+          </ul>
+          <a href="#waitlist" class="mt-6 inline-block w-full text-center rounded-xl bg-slate-800 hover:bg-slate-700 py-2">Get Started</a>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-emerald-400/30">
+          <h3 class="font-semibold">Pro</h3>
+          <p class="mt-1 text-3xl font-bold">$9<span class="text-base font-medium">/mo</span></p>
+          <ul class="mt-4 text-sm text-slate-300 space-y-2">
+            <li>Full perks marketplace</li>
+            <li>Relocation toolkit</li>
+            <li>City data & alerts</li>
+          </ul>
+          <a href="#waitlist" class="mt-6 inline-block w-full text-center rounded-xl bg-emerald-500 hover:bg-emerald-400 py-2">Go Pro</a>
+        </div>
+        <div class="glass rounded-2xl p-6 border border-white/10">
+          <h3 class="font-semibold">Teams</h3>
+          <p class="mt-1 text-3xl font-bold">Custom</p>
+          <ul class="mt-4 text-sm text-slate-300 space-y-2">
+            <li>Employee relocation perks</li>
+            <li>Admin dashboard</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#waitlist" class="mt-6 inline-block w-full text-center rounded-xl bg-indigo-500 hover:bg-indigo-400 py-2">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="py-20">
+    <div class="mx-auto max-w-2xl px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold">Be first in line</h2>
+      <p class="mt-2 text-slate-300">Join the waitlist for launch updates and early access perks.</p>
+      <form class="mt-6 flex flex-col sm:flex-row gap-3 justify-center" action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="email" name="email" required placeholder="you@example.com" class="w-full sm:w-auto sm:min-w-[320px] rounded-xl bg-slate-900 border border-white/10 px-4 py-3" />
+        <button class="rounded-xl bg-indigo-500 hover:bg-indigo-400 px-6 py-3 font-semibold">Join Waitlist</button>
+      </form>
+      <p class="mt-3 text-xs text-slate-500">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-white/10">
+    <div class="mx-auto max-w-7xl px-4 grid md:grid-cols-4 gap-8 text-sm text-slate-300">
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="./assets/logo.svg" class="h-6 w-6" alt="NomadNexus" />
+          <span class="font-semibold">NomadNexus</span>
+        </div>
+        <p class="mt-3 text-slate-400">Perks • Relocation • Community</p>
+      </div>
+      <div>
+        <h4 class="font-semibold">Product</h4>
+        <ul class="mt-2 space-y-1">
+          <li><a class="hover:text-white" href="#features">Features</a></li>
+          <li><a class="hover:text-white" href="#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Company</h4>
+        <ul class="mt-2 space-y-1">
+          <li><a class="hover:text-white" href="#partners">Partners</a></li>
+          <li><a class="hover:text-white" href="#waitlist">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold">Legal</h4>
+        <ul class="mt-2 space-y-1">
+          <li><a class="hover:text-white" href="#">Terms</a></li>
+          <li><a class="hover:text-white" href="#">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-xs text-slate-500">© <span id="y"></span> NomadNexus. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // set year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
